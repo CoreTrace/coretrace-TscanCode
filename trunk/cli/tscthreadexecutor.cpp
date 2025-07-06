@@ -30,6 +30,7 @@
 #include "path.h"
 #include "globalmacros.h"
 #include "checktscinvalidvarargs.h"
+#include <cstdint>
 
 #define MAXERRORCNT 30
 #define AUTOFILTER_SUBID "FuncPossibleRetNULL|FuncRetNULL|dereferenceAfterCheck|dereferenceBeforeCheck|possibleNullDereferenced|nullpointerarg|nullpointerclass"
