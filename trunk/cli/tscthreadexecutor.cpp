@@ -200,8 +200,6 @@ unsigned int __stdcall TscThreadExecutor::threadProc(void *args)
 void* TscThreadExecutor::threadProc(void *args)
 #endif
 {
-    unsigned int result = 0;
-
     TscThreadExecutor *threadExecutor = static_cast<TscThreadExecutor*>(args);
     TSC_LOCK_ENTER(&threadExecutor->_fileSync);
 
@@ -238,7 +236,7 @@ void* TscThreadExecutor::threadProc(void *args)
 			}
 			else {
 				pGlobalData->RecoredExportClass(false);
-				result += fileChecker.check(file, fileContent->second);
+				fileChecker.check(file, fileContent->second);
 			}
 		}
 		else {
@@ -248,7 +246,7 @@ void* TscThreadExecutor::threadProc(void *args)
 			}
 			else {
 				pGlobalData->RecoredExportClass(false);
-				result += fileChecker.check(file);
+				fileChecker.check(file);
 			}
 		}
 
